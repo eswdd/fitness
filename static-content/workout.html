@@ -1,0 +1,42 @@
+
+<h3>Add workout</h3>
+
+<p><a href="#history">Close Workout</a></p>
+
+<table>
+    <tr>
+        <td>Id</td>
+        <td><input type="text" ng-model="id" disabled="disabled"/></td>
+    </tr>
+    <tr>
+        <td>Date</td>
+        <td><input type="text" ng-model="date" ng-required="true"/></td>
+    </tr>
+    <tr>
+        <td>Name</td>
+        <td><input type="text" ng-model="name" ng-required="true"/></td>
+    </tr>
+    <tr>
+        <td>Activities</td>
+        <td><input type="button" ng-click="addActivity()" value="Add activity"/></td>
+    </tr>
+    <tr ng-repeat="activity in activities track by $index">
+        <td>{{activity.id}}</td>
+        <td><select ng-options="exercise.id as exercise.label for exercise in exercises" ng-model="activity.exercise"/></td>
+        <td>
+            <span ng-show="activityIsRepBased(activity)">
+                Reps: <input type="text" ng-model="reps" ng-required="activityIsRepBased(activity)"/>
+                Weight: <input type="text" ng-model="weight" ng-required="activityIsRepBased(activity)"/>
+            </span>
+            <span ng-show="activityIsTimeBased(activity)">
+                Time: <input type="time" ng-model="time" ng-required="activityIsTimeBased(activity)"/>
+            </span>
+        </td>
+        <td><input type="button" ng-click="deleteActivity($index)" value="x"/></td>
+    </tr>
+</table>
+
+<input type="button" ng-click="createWorkout()" value="Create workout" ng-disabled="!createWorkoutEnabled()" />
+<input type="button" ng-click="saveWorkout()" value="Save workout" ng-disabled="!saveWorkoutEnabled()" />
+
+<span>Status: {{status}}</span>

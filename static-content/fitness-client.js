@@ -1,0 +1,1 @@
+var fitness = angular.module('Fitness', ['ui.layout','ui.bootstrap','ngRoute']);

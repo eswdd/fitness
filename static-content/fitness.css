@@ -1,0 +1,41 @@
+.top-panel {
+    background-color: #eee;
+    text-align: center;
+}
+.graph-control-buttons-panel {
+    background-color: #eee;
+    text-align: right;
+}
+.graph-control-panel {
+    background-color: #eee;
+}
+.graph-panel {
+    background-color: #eee;
+}
+.metric-control-panel {
+    background-color: #eee;
+}
+
+.panel-body {
+    padding: 0;
+}
+
+.btn-xs .badge {
+    margin-bottom: 2px;
+}
+
+.glyphicon-chevron-left,
+.glyphicon-chevron-right,
+.glyphicon-chevron-up,
+.glyphicon-chevron-down{
+    color: #aaa;
+}
+
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+.ac-container {
+    position: absolute;
+    top: 100% !important;
+    left: 0 !important;
+    width: 100% !important;
+}
